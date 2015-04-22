@@ -45,6 +45,16 @@
       <button ng-click="click('first_bases')" style="color: gray">On First</button>
       <button ng-click="click('second_bases')" style="color: gray">On Second</button>
       <button ng-click="click('third_bases')" style="color: gray">On Third</button>
+      <br /><br />
+
+      <input class="col-md-3" type="text" ng-model="state.last_play" placeholder="Last Play" style="color: gray" />
+      <br />
+      <hr>
+
+      <button ng-click="reset()" class="reset">Reset Game</button>
+      <button ng-click="publish()" class="send">Send Game Stats</button>
     </div>
+
+    
   </body>
 </html>
