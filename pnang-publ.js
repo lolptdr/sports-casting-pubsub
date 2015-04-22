@@ -6,8 +6,8 @@ app.controller("MainCtrl", function($rootScope, $scope, PubNub){
 
   if (!$rootScope.initialized){
     PubNub.init({
-      subscribe_key: 'demo',
-      publish_key: 'demo',
+      subscribe_key: 'sub-c-031a30d6-e88a-11e4-b92a-02ee2ddab7fe',
+      publish_key: 'pub-c-77dd609f-056a-4120-80ea-fda5865618fc',
       uuid: $scope.userId
     });
     $rootScope.initialized = true;
