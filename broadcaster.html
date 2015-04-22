@@ -55,6 +55,45 @@
       <button ng-click="publish()" class="send">Send Game Stats</button>
     </div>
 
-    
+    <div class="broadcast col-md-4 col-md-offset-1 vcenter">
+      <h1>Live Game</h1>
+      <hr>
+      <h2>{{state.home_team}}: {{state.home_score}}</h2>
+      <h2>{{state.away_team}}: {{state.away_score}}</h2>
+      <h2>Inning: {{state.inning}}</h2>
+      <hr>
+      <br />
+
+      <svg
+           xmlns:svg="http://www.w3.org/2000/svg"
+           xmlns="http://www.w3.org/2000/svg"
+           version="1.1"
+           width="500"
+           height="400"
+           id="gamecast_svg">
+        <g>
+          <rect id="base1" ng-class="{first_base:true,rect:true,first_base_on:state.first_bases[0]}" width="100" height="100" x="-60" y="350" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,50,0)" />
+          <rect id="base2" ng-class="{second_base:true,rect:true,second_base_on:state.second_bases[0]}" width="100" height="100" x="-60" y="240" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,50,0)" />
+          <rect id="base3" ng-class="{third_base:true,rect:true,third_base_on:state.third_bases[0]}" width="100" height="100" x="-170" y="240" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,50,0)" />
+
+          <path id="b1" ng-class="{ball:true,circle:true,ball_on:state.balls[0]}" d="m 185,20 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="b2" ng-class="{ball:true,circle:true,ball_on:state.balls[1]}" d="m 235,20 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="b3" ng-class="{ball:true,circle:true,ball_on:state.balls[2]}" d="m 285,20 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="b4" ng-class="{ball:true,circle:true,ball_on:state.balls[3]}" d="m 335,20 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+
+          <path id="k1" ng-class="{strike:true,circle:true,strike_on:state.strikes[0]}" d="m 185,60 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="k2" ng-class="{strike:true,circle:true,strike_on:state.strikes[1]}" d="m 235,60 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="k3" ng-class="{strike:true,circle:true,strike_on:state.strikes[2]}" d="m 285,60 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+
+          <path id="o1" ng-class="{out:true,circle:true,out_on:state.outs[0]}" d="m 185,100 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="o2" ng-class="{out:true,circle:true,out_on:state.outs[1]}" d="m 235,100 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+          <path id="o3" ng-class="{out:true,circle:true,out_on:state.outs[2]}" d="m 285,100 a 16.5,15 0 1 1 -33,0 16.5,15 0 1 1 33,0 z"/>
+        </g>
+      </svg>
+
+      <h3>Last Play: {{state.last_play}}</h3>
+      <br />
+      <hr>
+    </div>
   </body>
 </html>
